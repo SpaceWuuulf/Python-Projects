@@ -1,0 +1,14 @@
+per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
+money = float(input("Введите сумму вклада: "))
+deposit = []
+for i in per_cent:
+    deposit.append(money * per_cent[i] / 100) #Далее использовать строчку в зависимотсти от степени округления чисел
+
+deposit = list(map(round, deposit)) #Если необходимо окгругление до целого цисла
+print(deposit)
+
+#Если необходимо округление до 2 знаков после запятой:
+#deposit = ['%.2f' % elem for elem in deposit]
+#print(deposit)
+
+print("Максимальная сумма, которую Вы можете заработать - %s" %(max(deposit)))
